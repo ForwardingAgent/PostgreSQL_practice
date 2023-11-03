@@ -4,10 +4,14 @@ on:
     branches: [ main ]  # name of GH event that triggers the workflow  https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#branch_protection_rule
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  #  ${{matrix.os}}  запустит 3 build на 3 ОС параллельно
+    # strategy:
+    #  matrix:
+    #    os: [ubuntu-latest, windows-latest, macOS-latest] запустит 3 build на 3 ОС параллельно
 
     steps:    # steps can run commands, setup tasks or run action
-      - uses: actions/checkout@v3  # selects action
+      - name: Checkout
+        uses: actions/checkout@v3  # несколько команд (git clone...) чтобы скопировать мой код и развернуть на вирт.маш. (runner)
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
@@ -23,3 +27,11 @@ jobs:
         run: |
           pip install flake8
           flake8
+
+      - name: Build and Push Docker Image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: nikolaipdk/github_actions
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}  # что можно еще добавить https://github.com/marketplace/actions/docker-build-push-action#inputs
+          password: ${{ secrets.DOCKER_PASSWORD }}
