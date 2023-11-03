@@ -28,8 +28,7 @@ jobs:
 
     - name: Check the table
       run: |
-        docker exec -T pgdb_container bash
-        psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }}
+        docker exec pgdb_container psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }} -c "SELECT * FROM ${{ secrets.POSTGRES_DB }};"
 
     - name: Stop containers
       run: docker compose down
