@@ -1,20 +1,19 @@
-name: PostgreSQL in container
+name: PostgreSQL
 
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up docker-compose
-      uses: docker/compose-cli-action@1
+      uses: isbang/compose-action@v1.5.1
       with:
         compose-file: docker-compose.yml
 
