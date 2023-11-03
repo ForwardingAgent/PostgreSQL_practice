@@ -1,4 +1,9 @@
 name: Check
+env:  # глобальные переменные для всех jobs
+  app_name: "My_Name"
+  second_name: "My_second_name ${{ github.sha }}"
+#  в steps: .... ${{ env.app_name }}
+
 on:
   push:
     branches: [ main ]  # name of GH event that triggers the workflow  https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#branch_protection_rule
@@ -8,6 +13,8 @@ jobs:
     # strategy:
     #  matrix:
     #    os: [ubuntu-latest, windows-latest, macOS-latest] запустит 3 build на 3 ОС параллельно
+    needs: login  # после выполнения другого джоба (login)
+
 
     steps:    # steps can run commands, setup tasks or run action
       - name: Checkout
@@ -28,10 +35,15 @@ jobs:
           pip install flake8
           flake8
 
+  login:
+    runs-on: ubuntu-latest
+    # needs: build
+
+    steps:    # steps can run commands, setup tasks or run action
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}  # что можно еще добавить https://github.com/marketplace/actions/docker-build-push-action#inputs
+          username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
 #      - name: Build and Push Docker Image
