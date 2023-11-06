@@ -45,7 +45,7 @@
 - реализовал базу данных PosgreSQL и сервис администрирования и разработки баз данных PostgreSQL pgAdmin 4;
 - запустил проект в Docker с помощью docker-compose файла;
 - изучил функционал Github Actions;
-- написал код для запуска контейнеров и создания базы данных в Githyb Actions;
+- написал код для запуска контейнеров и создания базы данных в Github Actions;
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -127,7 +127,7 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 
 Ниже представлены данные для быстрого создания и наполнения БД Book_Store в соответствии со схемой:
 <details>
-  <summary>Данные для Book_Store</summary>
+  :point_down: <summary>Данные для Book_Store</summary> 
     Тут скоро добавлю
 </details>
 
