@@ -46,10 +46,7 @@
 - запустил проект в Docker с помощью docker-compose файла;
 - изучил функционал Github Actions;
 - написал код для запуска контейнеров и создания базы данных в Githyb Actions;
-- на практике отработана модель MTV, операции CRUD для работы с БД с использованием ORM-интефрейса Django, реализована функция slug-и к url-адресам.
 
-
-![Main_page](readme-assets/Main_page.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,6 +128,7 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 Ниже представлены данные для быстрого создания и наполнения БД Book_Store в соответствии со схемой:
 <details>
   <summary>Данные для Book_Store</summary>
+    Тут скоро добавлю
 </details>
 
 
