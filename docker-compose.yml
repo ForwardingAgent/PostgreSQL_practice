@@ -5,7 +5,7 @@ services:
     container_name: pgdb_container
     restart: unless-stopped
     #env_file:  # скрыть для Github Actions тк секреты в secrets
-    #  - .env
+    #  - .env   # скрыть для Github Actions тк секреты в secrets
     ports:
       - 5432:5432
     environment:

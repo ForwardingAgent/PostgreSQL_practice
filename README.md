@@ -41,8 +41,10 @@
 
 
 Проект реализован для практики запросов в базу данных PosgreSQL.
+
+
 Что создал в проекте:
-- реализовал базу данных PosgreSQL и сервис администрирования и разработки баз данных PostgreSQL pgAdmin 4;
+- реализовал базу данных PosgreSQL + сервис администрирования и разработки баз данных PostgreSQL pgAdmin 4;
 - запустил проект в Docker с помощью docker-compose файла;
 - изучил функционал Github Actions;
 - написал код для запуска контейнеров и создания базы данных в Github Actions;
@@ -99,7 +101,8 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
    ```sh
    http://localhost:5050
    ```
-
+4. Для проверки Github Actions в docker-compose нужно закомментировать строки 'env_file:', т.к. Github Actions заполняет секретные данные из своих secrets.
+   Заполнить свои данные в Github Actions-Secrets (POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, PGADMIN_DEFAULT_EMAIL, PGADMIN_DEFAULT_PASSWORD).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,7 +112,7 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 ## Описание и процесс работы
 
 
-Данный проект запускается парой команд docker-compose build и docker-compose up, т.к. работает контейнерах на платформе Docker
+Данный проект запускается парой команд docker-compose build и docker-compose up, т.к. работает в контейнерах на платформе Docker.
 Каждый элемент проекта запущен в своем контейнере (PostgreSQL, PgAdmin):
 
 ![Docker](readme-assets/Postresql_In_Docker.png)
@@ -124,15 +127,14 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 ![pgAdmin](readme-assets/Request_Example.png)
 
 
-Вариант создания и заполнения базы данных по схеме (данные предоставлены ниже):
+Ниже предоставлены данные для варианта создания и заполнения базы данных по схеме:
 
 
 ![Book_Store_Scheme](readme-assets/Book_Store_Sсheme.png)
 
 
-Данные для быстрого создания и наполнения БД Book_Store в соответствии со схемой:
-<details>
-  :point_down: <summary>Данные для Book_Store</summary>
+:point_down: <details>
+   <summary>Данные для БД Book_Store в соответствии со схемой</summary>
 
 
     CREATE TABLE author (
@@ -302,7 +304,7 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 
 Email - npodkopaev@gmail.com
 
-Ссылка на проект: [https://github.com/ForwardingAgent/My_first_website](https://github.com/ForwardingAgent/My_first_website)
+Ссылка на проект: [https://github.com/ForwardingAgent/PostgreSQL_tasks](https://github.com/ForwardingAgent/PostgreSQL_tasks)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
