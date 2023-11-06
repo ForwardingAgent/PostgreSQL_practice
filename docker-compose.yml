@@ -4,8 +4,8 @@ services:
     image: postgres:16.0-alpine
     container_name: pgdb_container
     restart: unless-stopped
-    #env_file:
-    #    - .env
+    #env_file:  # скрыть для Github Actions тк секреты в secrets
+    #  - .env
     ports:
       - 5432:5432
     environment:
@@ -21,8 +21,8 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
     restart: unless-stopped
-    #env_file:
-    #    - .env
+    #env_file:  #  скрыть для Github Actions тк секреты в secrets
+    #  - .env
     ports:
       - 5050:80
     environment:
@@ -40,3 +40,16 @@ volumes:
 networks:
   postgres_1:
     driver: bridge
+
+# php:  чтобы сдлать на основе моего образа на dockerhub
+#    build:
+#      context: .
+#      dockerfile: Dockerfile    !!!!!!!!
+#    image: "yourregistry/phpimage:latest"   !!!!!!!!
+#    ports:
+#      - "8090:8085"
+#    volumes:
+#      - .:/var/www/html/Author-API
+#    restart: always
+#    depends_on:
+#      - db
