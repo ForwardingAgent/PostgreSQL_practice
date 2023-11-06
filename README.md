@@ -1,13 +1,13 @@
-![action status](https://github.com/ForwardingAgent/PostgreSQL_tasks/actions/workflows/first.yml/badge.svg)
 
+![action status](https://github.com/ForwardingAgent/PostgreSQL_tasks/actions/workflows/second.yml/badge.svg)
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h1 align="center">Репозиторий созданый для практики запросов в базе данных PostgreSQL</h1>
+  <h1 align="center">PostgreSQL + pgAdmin4</h1>
   <p align="center">
-    Test-project
+    Pet-project
       </p>
 </div>
 
@@ -48,6 +48,7 @@
 - написал код для запуска контейнеров и создания базы данных в Githyb Actions;
 - на практике отработана модель MTV, операции CRUD для работы с БД с использованием ORM-интефрейса Django, реализована функция slug-и к url-адресам.
 
+
 ![Main_page](readme-assets/Main_page.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -56,10 +57,12 @@
 
 ### Использованые инструменты для создания проекта:
 
-* [![Python][Python.py]][Python-url]
-* [![Django][Django.dj]][Django-url]
+
+* [![Postgres][Postgres.psg]][Postgres-url]
+* [![Docker][Docker.dkr]][Docker-url]
+* [![GitHub_Actions][GitHub_Actions.gtac]][GGitHub_Actions-url]
+* [![GitHub][GitHub.gth]][GitHub-url]
 * [![VSCode][VSCode.vsc]][VSCode-url]
-* [![Sqlite][Sqlite.sq]][Sqlite-url]
 * [![YouTube][YouTube.yt]][YouTube-url]
 
 
@@ -72,28 +75,35 @@
 
 Чтобы запустить локальную версию проекта необходимо скачать себе командой:
    ```sh
-$ git clone https://github.com/ForwardingAgent/My_first_website.git
+
+$ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
    ```
+Затем прописать в файле .env ваши данные для следующих переменных:
+
+для Postgres:
+- POSTGRES_DB=<ваши данные>
+- POSTGRES_USER=<ваши данные>
+- POSTGRES_PASSWORD=<ваши данные>
+
+для pgadmin:
+- PGADMIN_DEFAULT_EMAIL=<ваши данные (email)>
+- PGADMIN_DEFAULT_PASSWORD=<ваши данные (password)>
 
 ### Установка и запуск
 
-
-1. Активируйте виртуальное окружение
+1. Для сборки всех сервисов запустите команду
    ```sh
-   source venv/bin/activate
+   docker-compose build
     ```
-3. Установите зависимости
+2. Для запуска проекта запустите команду
    ```sh
-   pip install -r requirements.txt
+   docker-compose up
    ```
-4. Проведи миграции
+3. Доступ к БД Postgres через pgAdmin4 по адресу
    ```sh
-   python manage.py makemigrations, python manage.py migrate
+   http://localhost:5050
    ```
-5. Запустите локальный сервер
-   ```sh
-   python manage.py runserver
-   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,19 +112,21 @@ $ git clone https://github.com/ForwardingAgent/My_first_website.git
 <!-- USAGE EXAMPLES -->
 ## Описание и процесс работы
 
-В данном проекте реализована идея сайта с регистрацией:
-![First_registration](readme-assets/First_registration.png)
+Данный проект запускается парой команд docker-compose build и docker-compose up, т.к. работает контейнерах на основе платформы Docker
+Каждый элемент проекта запущен в своем контейнере (PostgreSQL, PgAdmin):
+
+![Docker](readme-assets/Docker.png)
 
 
-И авторизацией пользоваетелей:
-![Authorization](readme-assets/Authorization.png)
+Доступ и управление базой данных Postgres осуществляется через интерфейс платформы pgAdmin:
 
 
-С возможностью добавления статей и админ-панелью:
-![Django_admin](readme-assets/Django_admin.png)
+![pgAdmin](readme-assets/pgAdmin.png)
 
 
-Статьи разбиты по категориям в сайдбаре слева, а для быстрого перемещения по большому количеству статей применена постраничная пагинация.
+В личном кабинете пользователя организована Корзина товаров, так же пользователь может изменять в своем профиле, фото, имя и фамилию:
+
+![Basket](readme-assets/Basket.png)
 
 
 ![Pagination](readme-assets/Pagination.gif)
@@ -196,6 +208,22 @@ Email - npodkopaev@gmail.com
 
 [YouTube.yt]: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
 [YouTube-url]: https://www.youtube.com
+
+
+[Postgres.psg]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org
+
+[Redis.rds]: https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white
+[Redis-url]: https://redis.io
+
+[Docker.dkr]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com
+
+[GitHub.gth]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[GitHub-url]: https://github.com
+
+[GitHub_Actions.gtac]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white
+[GitHub_Actions-url]: https://github.com/features/actions
 
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
