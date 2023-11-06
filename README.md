@@ -58,16 +58,15 @@
 ### Использованые инструменты для создания проекта:
 
 
-* [![Postgres][Postgres.psg]][Postgres-url]
 * [![Docker][Docker.dkr]][Docker-url]
-* [![GitHub_Actions][GitHub_Actions.gtac]][GGitHub_Actions-url]
-* [![GitHub][GitHub.gth]][GitHub-url]
+* [![Postgres][Postgres.psg]][Postgres-url]
+* [![GitHub_Actions][GitHub_Actions.gtac]][GitHub_Actions-url]
 * [![VSCode][VSCode.vsc]][VSCode-url]
 * [![YouTube][YouTube.yt]][YouTube-url]
+* [![GitHub][GitHub.gth]][GitHub-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -112,7 +111,7 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 <!-- USAGE EXAMPLES -->
 ## Описание и процесс работы
 
-Данный проект запускается парой команд docker-compose build и docker-compose up, т.к. работает контейнерах на основе платформы Docker
+Данный проект запускается парой команд docker-compose build и docker-compose up, т.к. работает контейнерах на платформе Docker
 Каждый элемент проекта запущен в своем контейнере (PostgreSQL, PgAdmin):
 
 ![Docker](readme-assets/Docker.png)
@@ -123,13 +122,17 @@ $ git clone https://github.com/ForwardingAgent/PostgreSQL_tasks
 
 ![pgAdmin](readme-assets/pgAdmin.png)
 
-
-В личном кабинете пользователя организована Корзина товаров, так же пользователь может изменять в своем профиле, фото, имя и фамилию:
-
-![Basket](readme-assets/Basket.png)
+Работа возможна при создании и заполнении базы данных по схеме:
 
 
-![Pagination](readme-assets/Pagination.gif)
+![Book_Store_Scheme](readme-assets/Book_Store_Sсheme.png)
+
+
+Ниже представлены данные для быстрого создания и наполнения БД Book_Store в соответствии со схемой:
+<details>
+  <summary>Данные для Book_Store</summary>
+</details>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
