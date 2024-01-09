@@ -4,8 +4,9 @@ services:
     image: postgres:16.0-alpine
     container_name: pgdb_container
     restart: unless-stopped
-    #env_file:  # скрыть для Github Actions тк секреты в secrets
-    #  - .env   # скрыть для Github Actions тк секреты в secrets
+    platform: linux/amd64  # тк Mac создает image в другой системе
+    env_file:  # скрыть для Github Actions тк секреты в secrets
+      - .env   # скрыть для Github Actions тк секреты в secrets
     ports:
       - 5432:5432
     environment:
@@ -21,8 +22,9 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
     restart: unless-stopped
-    #env_file:  #  скрыть для Github Actions тк секреты в secrets
-    #  - .env
+    platform: linux/amd64
+    env_file:  #  скрыть для Github Actions тк секреты в secrets
+      - .env
     ports:
       - 5050:80
     environment:
