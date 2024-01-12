@@ -28,9 +28,6 @@ jobs:
 
     - name: Create the table and filling with data
       run: |
-        export POSTGRES_DB="${{ secrets.POSTGRES_DB }}"
-        export POSTGRES_USER="${{ secrets.POSTGRES_USER }}"
-
         ./script.sh
 
 
