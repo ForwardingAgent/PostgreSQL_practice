@@ -28,9 +28,9 @@ jobs:
 
     - name: Create the table and filling with data
       run: |
-        docker exec pgdb_container psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }} \
-        -c "CREATE DATABASE books_store;"
-        # ./script.sh
+        # docker exec pgdb_container psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }} \
+        # -c "CREATE DATABASE books_store;"
+        ./script.sh
 
 
     - name: Stop containers
