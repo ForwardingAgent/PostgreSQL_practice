@@ -26,10 +26,13 @@ jobs:
     - name: Build and start containers
       run: docker compose up -d
 
-    - name: Check the table
+    - name: Create the table and filling with data
       run: |
-        docker exec pgdb_container psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }} \
-        -c "CREATE DATABASE books_store;"
+        export POSTGRES_DB="${{ secrets.POSTGRES_DB }}"
+        export POSTGRES_USER="${{ secrets.POSTGRES_USER }}"
+
+        ./script.sh
+
 
     - name: Stop containers
       run: docker compose down
