@@ -5,8 +5,8 @@ services:
     container_name: pgdb_container
     restart: unless-stopped
     platform: linux/amd64  # тк Mac создает image в другой системе
-    env_file:  # скрыть для Github Actions тк секреты в secrets
-      - .env   # скрыть для Github Actions тк секреты в secrets
+    # env_file:  # скрыть для Github Actions тк секреты в secrets
+    #  - .env   # скрыть для Github Actions тк секреты в secrets
     ports:
       - 5432:5432
     environment:
@@ -23,8 +23,8 @@ services:
     container_name: pgadmin4_container
     restart: unless-stopped
     platform: linux/amd64
-    env_file:  #  скрыть для Github Actions тк секреты в secrets
-      - .env
+    # env_file:  #  скрыть для Github Actions тк секреты в secrets
+    #  - .env
     ports:
       - 5050:80
     environment:
