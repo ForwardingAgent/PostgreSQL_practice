@@ -1,7 +1,1 @@
-# add data
-
-# new data
-
-# and new data
-
-# new again
+# delete all data
