@@ -30,7 +30,7 @@ jobs:
       run: |
         # docker exec pgdb_container psql -d ${{ secrets.POSTGRES_DB }} -U ${{ secrets.POSTGRES_USER }} \
         # -c "CREATE DATABASE books_store;"
-        sh ./script.sh
+        ./script.sh
 
 
     - name: Stop containers
