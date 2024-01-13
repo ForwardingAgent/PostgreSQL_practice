@@ -4,7 +4,7 @@
 # echo "Мой секрет: POSTGRES_DB это $POSTGRES_DB"
 
 docker exec pgdb_container psql -d $POSTGRES_DB -U $POSTGRES_USER \
--c 'CREATE TABLE author (
+-c "CREATE TABLE author (
     author_id SERIAL PRIMARY KEY,
     name_author VARCHAR(50)
 );
@@ -146,4 +146,4 @@ VALUES (1, 1, 1, '2020-02-20', '2020-02-20'),
     (15, 4, 3, NULL, NULL),
     (16, 4, 4, NULL, NULL);
 
-SELECT * FROM book;'
+SELECT * FROM book;"
